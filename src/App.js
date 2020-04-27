@@ -1,13 +1,16 @@
 import React from "react";
 import { Component } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import "./app.css";
 
 // Page Imports
 import Home from "./pages/Home";
+import Cart from "./pages/Cart";
+import Orders from "./pages/Orders";
 import AddProduct from "./pages/AddProduct";
 
 // Component Imports
-import Header from "./components/Header";
+import NavBar from "./components/NavBar";
 
 class App extends Component {
     constructor(props) {
@@ -57,15 +60,28 @@ class App extends Component {
         return (
             <div className="App">
                 <Router>
-                    <Header />
+                    <NavBar />
 
                     <Switch>
+                        {/* Cart Page Route */}
+                        <Route path="/cart">
+                            <Cart />
+                        </Route>
+
+                        {/* Cart Page Route */}
+                        <Route path="/orders">
+                            <Orders />
+                        </Route>
+
+                        {/* Add Product Page Route */}
                         <Route path="/admin/add-product">
                             <AddProduct
                                 handleChange={this.handleChange}
                                 addProduct={this.addProduct}
                             />
                         </Route>
+
+                        {/* Home Page Route */}
                         <Route path="/">
                             <Home products={this.state.products} />
                         </Route>

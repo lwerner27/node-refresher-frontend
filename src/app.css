@@ -1,0 +1,108 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap");
+
+/* General CSS Selectors */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: "Open Sans", sans-serif;
+}
+
+main {
+    padding: 1rem;
+    margin: auto;
+}
+
+form {
+    display: inline;
+}
+
+.main-header {
+    width: 100%;
+    height: 3.5rem;
+    background-color: #00695c;
+    padding: 0 1.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.main-header__nav {
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+
+.main-header__item-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.main-header__item {
+    margin: 0 1rem;
+    padding: 0;
+}
+
+.main-header__item a {
+    text-decoration: none;
+    color: white;
+}
+
+.main-header__item a:hover,
+.main-header__item a:active,
+.main-header__item a.active {
+    color: #ffeb3b;
+}
+
+/* Form CSS Selectors */
+.product-form {
+    width: 20rem;
+    max-width: 90%;
+    margin: auto;
+    display: block;
+}
+
+.form-control {
+    margin: 1rem 0;
+}
+
+.form-control label,
+.form-control input,
+.form-control textarea {
+    display: block;
+    width: 100%;
+    margin-bottom: 0.25rem;
+}
+
+.form-control input,
+.form-control textarea {
+    border: 1px solid #a1a1a1;
+    font: inherit;
+    border-radius: 2px;
+}
+
+.form-control input:focus,
+.form-control textarea:focus {
+    outline-color: #00695c;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.25rem 1rem;
+    text-decoration: none;
+    font: inherit;
+    border: solid 1px #00695c;
+    background: white;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.btn:active,
+.btn:hover {
+    background: #00695c;
+    color: white;
+}
