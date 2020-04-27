@@ -18,6 +18,15 @@ const AddProduct = ({ handleChange, addProduct }) => (
                 <input type="number" name="price" id="price" step="0.01" />
             </div>
 
+            <div className="form-control">
+                <label htmlFor="description">Description</label>
+                <textarea
+                    name="description"
+                    id="description"
+                    rows="5"
+                ></textarea>
+            </div>
+
             <button className="btn" type="submit">
                 Add Product
             </button>
