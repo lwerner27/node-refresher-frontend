@@ -16,7 +16,15 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            products: [],
+            products: [
+                {
+                    title: "The Wolf of Cape Fen",
+                    imgUrl:
+                        "http://julianalbrandt.com/wp-content/uploads/The-Wolf-of-Cape-Fen-266x400.jpg",
+                    price: 19.99,
+                    description: "A book written by Juliana Brandt.",
+                },
+            ],
             newProdTitle: "",
             newProdImgUrl: "",
             newProdPrice: 0,
