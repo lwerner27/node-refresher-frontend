@@ -13,12 +13,15 @@ const Home = ({ products }) => {
                 id={prod.id}
             />
         ));
-        return content;
     } else {
         content = <h1>There are no products to display.</h1>;
     }
 
-    return <main>{content}</main>;
+    return (
+        <main>
+            <div className="grid">{content}</div>
+        </main>
+    );
 };
 
 export default Home;
