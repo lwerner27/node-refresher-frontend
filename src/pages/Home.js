@@ -2,16 +2,23 @@ import React from "react";
 import Product from "../components/Product";
 
 const Home = ({ products }) => {
-    return (
-        <main>
+    let content;
+    if (products) {
+        content = products.map((prod) => (
             <Product
-                title="The Wolf of Cape Fen"
-                imgUrl="http://julianalbrandt.com/wp-content/uploads/The-Wolf-of-Cape-Fen-266x400.jpg"
-                price={19.99}
-                description="A book written by Juliana Brandt"
+                title={prod.title}
+                imgUrl={prod.imgUrl}
+                price={prod.price}
+                description={prod.description}
+                id={prod.id}
             />
-        </main>
-    );
+        ));
+        return content;
+    } else {
+        content = <h1>There are no products to display.</h1>;
+    }
+
+    return <main>{content}</main>;
 };
 
 export default Home;

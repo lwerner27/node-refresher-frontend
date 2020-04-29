@@ -16,18 +16,11 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            products: [
-                {
-                    title: "The Wolf of Cape Fen",
-                    imgUrl:
-                        "http://julianalbrandt.com/wp-content/uploads/The-Wolf-of-Cape-Fen-266x400.jpg",
-                    price: 19.99,
-                    description: "A book written by Juliana Brandt.",
-                },
-            ],
+            products: null,
             newProdTitle: "",
             newProdImgUrl: "",
-            newProdPrice: 0,
+            newProdPrice: "",
+            newProdDescription: "",
         };
 
         // Method Bindings
@@ -46,12 +39,19 @@ class App extends Component {
     addProduct(event) {
         event.preventDefault();
 
-        let products = this.state.products;
+        let products;
+
+        if (this.state.products) {
+            products = this.state.products;
+        } else {
+            products = [];
+        }
 
         let newProduct = {
             title: this.state.newProdTitle,
-            imageUrl: this.state.newProdImgUrl,
+            imgUrl: this.state.newProdImgUrl,
             price: this.state.newProdPrice,
+            description: this.state.newProdDescription,
         };
 
         products.push(newProduct);
@@ -60,7 +60,8 @@ class App extends Component {
             products,
             newProdTite: "",
             newProdImgUrl: "",
-            newProdPrice: 0,
+            newProdPrice: "",
+            newProdDescription: "",
         });
     }
 
@@ -86,6 +87,12 @@ class App extends Component {
                             <AddProduct
                                 handleChange={this.handleChange}
                                 addProduct={this.addProduct}
+                                newProdTitle={this.state.newProdTitle}
+                                newProdImgUrl={this.state.newProdImgUrl}
+                                newProdPrice={this.state.newProdPrice}
+                                newProdDescription={
+                                    this.state.newProdDescription
+                                }
                             />
                         </Route>
 
